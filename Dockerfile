@@ -12,7 +12,10 @@ RUN apt-get update \
     zip \
   && rm -rf /var/lib/apt/lists/*
 
-RUN npm install -g openclaw@2026.3.13 clawhub@latest @stepandel/agentmail-cli@latest
+# RUN npm install -g openclaw@2026.3.13 clawhub@latest @stepandel/agentmail-cli@latest
+
+RUN npm install -g openclaw@2026.3.13 clawhub@latest @stepandel/agentmail-cli@latest \
+  && ln -s /usr/local/bin/agentmail-cli /usr/local/bin/agentmail
 
 # Backward-compatibility shim for older OPENCLAW_ENTRY values.
 RUN mkdir -p /openclaw \
