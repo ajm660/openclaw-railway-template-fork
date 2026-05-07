@@ -14,8 +14,7 @@ RUN apt-get update \
 
 # RUN npm install -g openclaw@2026.3.13 clawhub@latest @stepandel/agentmail-cli@latest
 
-RUN npm install -g openclaw@2026.3.13 clawhub@latest @stepandel/agentmail-cli@latest \
-  && ls -la /usr/local/bin/agentmail* 2>/dev/null || echo "NO agentmail binaries found"
+RUN npm install -g openclaw@2026.3.13 clawhub@latest @stepandel/agentmail-cli@latest
 
 # Backward-compatibility shim for older OPENCLAW_ENTRY values.
 RUN mkdir -p /openclaw \
